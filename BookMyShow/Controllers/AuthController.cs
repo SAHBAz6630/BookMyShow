@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookMyShow.Controllers
 {
+   
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -14,14 +15,14 @@ namespace BookMyShow.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register(RegisterDto dto)
+        public IActionResult Register([FromBody] RegisterDto dto)
         {
             _authService.Register(dto);
             return Ok("User registered successfully");
         }
 
         [HttpPost("login")]
-        public IActionResult Login(LoginDto dto)
+        public IActionResult Login([FromBody] LoginDto dto)
         {
             var token = _authService.Login(dto);
             return Ok(new { token });

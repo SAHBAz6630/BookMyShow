@@ -15,6 +15,6 @@ namespace BookMyShow.Models
         [Required]
         public string PasswordHash { get; set; }
 
-        public string Role { get; set; } // Admin / User
+        public string? Role { get; set; } // Admin / User
     }
 }

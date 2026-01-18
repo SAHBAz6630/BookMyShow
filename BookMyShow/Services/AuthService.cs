@@ -27,7 +27,7 @@ namespace BookMyShow.Services
                 Name = dto.Name,
                 Email = dto.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
-                Role = "User"
+                Role = string.IsNullOrEmpty(dto.Role) ? "User" : dto.Role
             };
 
             _context.Users.Add(user);

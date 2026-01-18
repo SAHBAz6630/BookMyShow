@@ -7,5 +7,7 @@
         public string Language { get; set; }
         public int Duration { get; set; } // minutes
         public DateTime ReleaseDate { get; set; }
+
+        public string? ImageUrl { get; set; }
     }
 }
